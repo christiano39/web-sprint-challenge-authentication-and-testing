@@ -32,7 +32,7 @@ router.post("/register", (req, res) => {
         .json({ message: "User created successfully", user, token });
     })
     .catch((err) => {
-      res.status(500).json({ error: err.message });
+      if (!res.headersSent) res.status(500).json({ error: err.message });
     });
 });
 
@@ -57,7 +57,7 @@ router.post("/login", (req, res) => {
       }
     })
     .catch((err) => {
-      res.status(500).json({ error: err.message });
+      if (!res.headersSent) res.status(500).json({ error: err.message });
     });
 });
 
