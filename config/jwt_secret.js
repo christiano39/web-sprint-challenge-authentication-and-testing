@@ -1,1 +1,2 @@
-module.exports = "jhsbdfcjhasvdflkasbdlsjhkdcljshdvcshjbc";
+module.exports =
+  process.env.JWT_SECRET || "jhsbdfcjhasvdflkasbdlsjhkdcljshdvcshjbc";
